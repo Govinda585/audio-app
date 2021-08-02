@@ -7,7 +7,7 @@ import { IoIosShareAlt } from "react-icons/io";
 import { AiFillHeart } from "react-icons/ai";
 
 const Videos = (props) => {
-  let { videoUrl, videoThumbnail, openCommentDialog } = props;
+  let { videoUrl, videoThumbnail, openCommentDialog, openShare } = props;
   return (
     <div className="bg-navbar rounded-md p-2">
       <ReactPlayer
@@ -39,7 +39,7 @@ const Videos = (props) => {
             <h4 className="text-xs font-bold">150</h4>
           </section>
           <section className="flex flex-col items-center text-heart">
-            <IoIosShareAlt className="cursor-pointer" />
+            <IoIosShareAlt className="cursor-pointer" onClick={openShare} />
             <h4 className="text-xs font-bold">150k</h4>
           </section>
         </div>

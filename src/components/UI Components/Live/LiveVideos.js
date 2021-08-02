@@ -1,7 +1,7 @@
 import React from "react";
-import Videos from "./Videos";
 import video from "../../assets/video/All over in 10 seconds.mp4";
 import salman from "../../assets/images/image.png";
+import Videos from "../Trending/Videos";
 
 const videos = [
   {
@@ -20,25 +20,9 @@ const videos = [
     videoUrl: video,
     videoThumbnail: salman,
   },
-  {
-    videoUrl: video,
-    videoThumbnail: salman,
-  },
-  {
-    videoUrl: video,
-    videoThumbnail: salman,
-  },
-  {
-    videoUrl: video,
-    videoThumbnail: salman,
-  },
-  {
-    videoUrl: video,
-    videoThumbnail: salman,
-  },
 ];
 
-const TrendingVideos = (props) => {
+const LiveVideos = (props) => {
   const { openCommentDialog, openShare } = props;
   return (
     <div className="flex flex-wrap">
@@ -56,4 +40,4 @@ const TrendingVideos = (props) => {
   );
 };
 
-export default TrendingVideos;
+export default LiveVideos;

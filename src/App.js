@@ -13,18 +13,28 @@ import Cast from "./components/UI Components/Cast/Cast";
 import Setting from "./components/UI Components/Setting/Setting";
 import Comment from "./components/UI Components/Comments/Comment";
 import { useState } from "react";
+import Share from "./components/UI Components/Comments/Share";
 
 function App() {
   const [openComment, setOpenComment] = useState(false);
+  const [open, setOpen] = useState(false);
   const openCommentDialog = () => {
     setOpenComment(true);
   };
   const closeCommentDialog = () => {
     setOpenComment(false);
   };
+
+  const openShare = () => {
+    setOpen(true);
+  };
+  const closeShare = () => {
+    setOpen(false);
+  };
   return (
     <Router>
       <div className="wrapper h-screen">
+        <Share closeShare={closeShare} open={open} />
         <Comment
           openComment={openComment}
           closeCommentDialog={closeCommentDialog}
@@ -38,7 +48,10 @@ function App() {
         <div className="main p-5">
           <Switch>
             <Route exact path="/">
-              <Home />
+              <Home
+                openCommentDialog={openCommentDialog}
+                openShare={openShare}
+              />
             </Route>
             <Route exact path="/profile">
               <Profile />
@@ -47,16 +60,25 @@ function App() {
               <FollowingList />
             </Route>
             <Route exact path="/live">
-              <Live />
+              <Live
+                openCommentDialog={openCommentDialog}
+                openShare={openShare}
+              />
             </Route>
             <Route exact path="/recording">
               <VoiceRecording />
             </Route>
             <Route exact path="/trending">
-              <Trending openCommentDialog={openCommentDialog} />
+              <Trending
+                openCommentDialog={openCommentDialog}
+                openShare={openShare}
+              />
             </Route>
             <Route exact path="/cast">
-              <Cast />
+              <Cast
+                openCommentDialog={openCommentDialog}
+                openShare={openShare}
+              />
             </Route>
             <Route exact path="/setting">
               <Setting />

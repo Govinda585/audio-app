@@ -17,6 +17,8 @@ module.exports = {
       hardGray: "#727272",
       lightGray: "#565656",
       heart: "#546a79",
+      facebook: "#4267B2",
+      whatsApp: "#25d366",
     },
     borderColor: (theme) => ({
       DEFAULT: theme("colors.gray.300", "currentColor"),
