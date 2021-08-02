@@ -5,6 +5,8 @@ module.exports = {
     backgroundColor: (theme) => ({
       sidebar: "#f8f8f8",
       navbar: "#ffffff",
+      danger: "#e3342f",
+      mainBg: "#efefef",
     }),
     textColor: (theme) => theme("colors"),
     textColor: {
@@ -12,6 +14,9 @@ module.exports = {
       secondary: "#ffed4a",
       danger: "#e3342f",
       icons: "#566afa",
+      hardGray: "#727272",
+      lightGray: "#565656",
+      heart: "#546a79",
     },
     borderColor: (theme) => ({
       DEFAULT: theme("colors.gray.300", "currentColor"),

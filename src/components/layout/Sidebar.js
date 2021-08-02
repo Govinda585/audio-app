@@ -7,43 +7,44 @@ import SettingsInputAntennaOutlinedIcon from "@material-ui/icons/SettingsInputAn
 import TrendingUpOutlinedIcon from "@material-ui/icons/TrendingUpOutlined";
 import CastOutlinedIcon from "@material-ui/icons/CastOutlined";
 import SettingsOutlinedIcon from "@material-ui/icons/SettingsOutlined";
+import { NavLink } from "react-router-dom";
 const Sidebar = () => {
   return (
     <div className=" divide-y-2 divide-sidebar-divider divide-solid px-5 bg-sidebar h-main-height">
       <ul className="py-8 space-y-3">
-        <section className="sidebar-item">
+        <NavLink className="sidebar-item" to="/">
           <HomeOutlinedIcon /> <li>Home</li>
-        </section>
-        <section className="sidebar-item">
+        </NavLink>
+        <NavLink className="sidebar-item" to="profile">
           <PersonOutlinedIcon /> <li>Profile</li>
-        </section>
-        <section className="sidebar-item">
+        </NavLink>
+        <NavLink className="sidebar-item" to="/following-list">
           <PeopleOutlinedIcon /> <li>Following List</li>
-        </section>
+        </NavLink>
       </ul>
       <ul className="py-8 space-y-3">
-        <section className="sidebar-item">
+        <NavLink className="sidebar-item" to="/live">
           <SettingsInputAntennaOutlinedIcon />
           <li>Live</li>
-        </section>
+        </NavLink>
 
-        <section className="sidebar-item">
+        <NavLink className="sidebar-item" to="/recording">
           <MicNoneOutlinedIcon /> <li>Voice Recording</li>
-        </section>
+        </NavLink>
 
-        <section className="sidebar-item">
+        <NavLink className="sidebar-item" to="/trending">
           <TrendingUpOutlinedIcon /> <li>Trending</li>
-        </section>
-        <section className="sidebar-item">
+        </NavLink>
+        <NavLink className="sidebar-item" to="/cast">
           <CastOutlinedIcon />
-          <li>Cast</li>{" "}
-        </section>
+          <li>Cast</li>
+        </NavLink>
       </ul>
       <ul className="py-8 space-y-3">
-        <section className="sidebar-item">
+        <NavLink className="sidebar-item" to="/setting">
           <SettingsOutlinedIcon />
           <li>Setting</li>
-        </section>
+        </NavLink>
       </ul>
     </div>
   );
