@@ -1,7 +1,9 @@
 import { Avatar } from "@material-ui/core";
-import React from "react";
+import React, { useState } from "react";
 import profile from "../../../assets/images/avatar.png";
 import { makeStyles } from "@material-ui/core/styles";
+import ProfileVideos from "./ProfileVideos";
+import SavedVideos from "./SavedVideos";
 
 const useStyles = makeStyles((theme) => ({
   large: {
@@ -11,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 const Profile = () => {
   const classes = useStyles();
+  const [profileVideo, setProfileVideo] = useState(true);
   return (
     <div>
       {/* profile card */}
@@ -37,6 +40,28 @@ const Profile = () => {
           </div>
         </section>
       </div>
+
+      {/* videos and saved videos */}
+      <div className="flex space-x-10 p-3">
+        <h1
+          className={`text-lightGray text-xl font-medium w-44 text-center cursor-pointer ${
+            profileVideo ? "border-b-2 border-hardGray" : null
+          } `}
+          onClick={() => setProfileVideo(true)}
+        >
+          Videos
+        </h1>
+        <h1
+          className={`text-lightGray text-xl font-medium w-44 text-center cursor-pointer ${
+            profileVideo ? null : "border-b-2 border-hardGray"
+          } `}
+          onClick={() => setProfileVideo(false)}
+        >
+          Saved Videos
+        </h1>
+      </div>
+
+      <div>{profileVideo ? <ProfileVideos /> : <SavedVideos />}</div>
     </div>
   );
 };

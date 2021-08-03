@@ -7,6 +7,7 @@ module.exports = {
       navbar: "#ffffff",
       danger: "#e3342f",
       mainBg: "#efefef",
+      btn: "#566afa",
     }),
     textColor: (theme) => theme("colors"),
     textColor: {
@@ -19,6 +20,7 @@ module.exports = {
       heart: "#546a79",
       facebook: "#4267B2",
       whatsApp: "#25d366",
+      navbar: "#ffffff",
     },
     borderColor: (theme) => ({
       DEFAULT: theme("colors.gray.300", "currentColor"),
@@ -26,6 +28,7 @@ module.exports = {
       secondary: "#ffed4a",
       danger: "#e3342f",
       icons: "#566afa",
+      hardGray: "#727272",
     }),
     height: {
       "nav-height": "10vh",
