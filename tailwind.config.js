@@ -8,6 +8,7 @@ module.exports = {
       danger: "#e3342f",
       mainBg: "#efefef",
       btn: "#566afa",
+      post: "#61c4be",
     }),
     textColor: (theme) => theme("colors"),
     textColor: {

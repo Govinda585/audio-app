@@ -5,6 +5,7 @@ import MicNoneOutlinedIcon from "@material-ui/icons/MicNoneOutlined";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import avatar from "../../assets/images/avatar.png";
 import SearchIcon from "@material-ui/icons/Search";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div className="bg-navbar h-nav-height flex justify-between items-center h-full shadow-md">
@@ -16,11 +17,11 @@ const Navbar = () => {
         </div>
       </div>
       <div className="flex space-x-8 px-5 items-center">
-        <h1 className="text-icons">
+        <Link className="text-icons" to="/upload">
           <Avatar style={{ color: "white", background: "#566afa" }}>
             <PublishIcon />
           </Avatar>
-        </h1>
+        </Link>
         <div className="flex space-x-5 border-2 border-icons py-1 rounded-full px-3 items-center">
           <MicNoneOutlinedIcon className="text-icons" />
           <h1 className="text-icons uppercase font-bold">rec</h1>

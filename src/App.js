@@ -14,6 +14,7 @@ import Setting from "./components/UI Components/Setting/Setting";
 import Comment from "./components/UI Components/Comments/Comment";
 import { useState } from "react";
 import Share from "./components/UI Components/Comments/Share";
+import Upload from "./components/UI Components/Upload/Upload";
 
 function App() {
   const [openComment, setOpenComment] = useState(false);
@@ -82,6 +83,9 @@ function App() {
             </Route>
             <Route exact path="/setting">
               <Setting />
+            </Route>
+            <Route path="/upload">
+              <Upload />
             </Route>
           </Switch>
         </div>
