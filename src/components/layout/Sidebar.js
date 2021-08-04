@@ -12,36 +12,69 @@ const Sidebar = () => {
   return (
     <div className=" divide-y-2 divide-sidebar-divider divide-solid px-5 bg-sidebar h-main-height">
       <ul className="py-8 space-y-3">
-        <NavLink className="sidebar-item" to="/">
+        <NavLink
+          className="sidebar-item"
+          exact
+          to="/"
+          activeStyle={{ color: "#566afa" }}
+        >
           <HomeOutlinedIcon /> <li>Home</li>
         </NavLink>
-        <NavLink className="sidebar-item" to="profile">
+        <NavLink
+          className="sidebar-item"
+          to="profile"
+          activeStyle={{ color: "#566afa" }}
+        >
           <PersonOutlinedIcon /> <li>Profile</li>
         </NavLink>
-        <NavLink className="sidebar-item" to="/following-list">
+        <NavLink
+          className="sidebar-item"
+          to="/following-list"
+          activeStyle={{ color: "#566afa" }}
+        >
           <PeopleOutlinedIcon /> <li>Following List</li>
         </NavLink>
       </ul>
       <ul className="py-8 space-y-3">
-        <NavLink className="sidebar-item" to="/live">
+        <NavLink
+          className="sidebar-item"
+          to="/live"
+          activeStyle={{ color: "#566afa" }}
+        >
           <SettingsInputAntennaOutlinedIcon />
           <li>Live</li>
         </NavLink>
 
-        <NavLink className="sidebar-item" to="/recording">
+        <NavLink
+          className="sidebar-item"
+          to="/recording"
+          activeStyle={{ color: "#566afa" }}
+        >
           <MicNoneOutlinedIcon /> <li>Voice Recording</li>
         </NavLink>
 
-        <NavLink className="sidebar-item" to="/trending">
+        <NavLink
+          className="sidebar-item"
+          to="/trending"
+          activeStyle={{ color: "#566afa" }}
+        >
           <TrendingUpOutlinedIcon /> <li>Trending</li>
         </NavLink>
-        <NavLink className="sidebar-item" to="/cast">
+        <NavLink
+          className="sidebar-item"
+          to="/cast"
+          activeStyle={{ color: "#566afa" }}
+        >
           <CastOutlinedIcon />
           <li>Cast</li>
         </NavLink>
       </ul>
       <ul className="py-8 space-y-3">
-        <NavLink className="sidebar-item" to="/setting">
+        <NavLink
+          className="sidebar-item"
+          to="/setting"
+          activeStyle={{ color: "#566afa" }}
+        >
           <SettingsOutlinedIcon />
           <li>Setting</li>
         </NavLink>
