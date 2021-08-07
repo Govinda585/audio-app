@@ -44,12 +44,18 @@ function App() {
   const logoutSuccess = () => {
     setLoginModel(true);
   };
+  const [menu, setMenu] = useState(false);
+  const openMenu = () => {
+    setMenu(!menu);
+  };
   return (
     <Router>
       <div className="relative">
-        <div className="absolute top-0 right-0 z-10 sm:w-2/4 md:w-1/4 w-full lg:hidden">
-          <Sidebar />
-        </div>
+        {menu ? (
+          <div className="absolute top-0 right-0 z-10 sm:w-2/4 md:w-1/4 w-full lg:hidden">
+            <Sidebar />
+          </div>
+        ) : null}
         <div className="wrapper h-screen">
           <Login loginModel={loginModel} loginSuccess={loginSuccess} />
           <Share closeShare={closeShare} open={open} />
@@ -58,7 +64,11 @@ function App() {
             closeCommentDialog={closeCommentDialog}
           />
           <div className="nav">
-            <Navbar logoutSuccess={logoutSuccess} />
+            <Navbar
+              logoutSuccess={logoutSuccess}
+              menu={menu}
+              openMenu={openMenu}
+            />
           </div>
           <div className="sidebar hidden lg:block">
             <Sidebar />

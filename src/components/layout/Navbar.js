@@ -10,7 +10,7 @@ import logo from "../assets/images/png-2.png";
 import { useState } from "react";
 import MenuIcon from "@material-ui/icons/Menu";
 import CloseIcon from "@material-ui/icons/Close";
-const Navbar = ({ logoutSuccess }) => {
+const Navbar = ({ logoutSuccess, menu, openMenu }) => {
   const notification = [
     "notification1",
     "notification2",
@@ -22,22 +22,18 @@ const Navbar = ({ logoutSuccess }) => {
 
   const [toogleProfile, setToogleProfile] = useState(false);
 
-  const [menu, setMenu] = useState(false);
-  const openMenu = () => {
-    setMenu(true);
-  };
   return (
-    <div className="bg-navbar h-nav-height flex justify-between items-center h-full shadow-md">
+    <div className="bg-navbar h-nav-height flex justify-between items-center shadow-md">
       {/* <h1 className="px-16 font-bold text-icons">LOGO</h1> */}
       <div className="flex space-x-7">
-        <Link to="/" className="px-16">
+        <Link to="/" className="px-1 sm:px-16">
           <img src={logo} alt="logo" width="75px" />
         </Link>
         <Link
           className="rounded-full border border-sidebar px-1 lg:px-5 flex items-center"
           to="/search"
         >
-          <input className="outline-none" type="text" />
+          <input className="outline-none w-32 sm:w-full" type="text" />
           <SearchIcon className="text-sidebar" />
         </Link>
       </div>
@@ -107,9 +103,12 @@ const Navbar = ({ logoutSuccess }) => {
           ) : null}
         </div>
       </div>
-      <div className="lg:hidden px-3 z-10">
-        <MenuIcon onClick={openMenu} />
-        <CloseIcon />
+      <div className="lg:hidden px-3 z-10 cursor-pointer">
+        {menu ? (
+          <CloseIcon onClick={openMenu} />
+        ) : (
+          <MenuIcon onClick={openMenu} />
+        )}
       </div>
     </div>
   );

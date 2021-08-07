@@ -22,7 +22,7 @@ const Keywords = () => {
   const leftClick = () => {};
 
   return (
-    <div className="flex space-x-3 py-3 overflow-hidden items-center">
+    <div className="flex flex-wrap space-y-1 space-x-3 py-3 overflow-hidden items-center">
       {start !== 0 ? (
         <GrFormPrevious className="cursor-pointer" onClick={leftClick} />
       ) : null}

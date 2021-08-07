@@ -24,6 +24,7 @@ const Login = ({ loginModel, loginSuccess }) => {
     const target = e.target;
     const name = target.name;
     const value = target.type === "checkbox" ? target.checked : target.value;
+
     setLogin({
       ...login,
       [name]: value,
@@ -94,70 +95,76 @@ const Login = ({ loginModel, loginSuccess }) => {
               ? "Please sign up to enter in a app"
               : "Please login to enter in a app"}
           </h4>
-          <div className="space-y-5">
-            {signup ? (
+          <form onSubmit={loginSignup}>
+            <div className="space-y-5">
+              {signup ? (
+                <section className="flex space-x-3 items-center">
+                  <FaUser />
+                  <input
+                    type="text"
+                    value={username}
+                    name="username"
+                    onChange={handleLogin}
+                    placeholder="username"
+                    className="rounded-md outline-none border p-2"
+                    required
+                  />
+                </section>
+              ) : null}
               <section className="flex space-x-3 items-center">
-                <FaUser />
+                <MdEmail />
                 <input
-                  type="text"
-                  value={username}
-                  name="username"
+                  type="email"
+                  value={email}
+                  name="email"
                   onChange={handleLogin}
-                  placeholder="username"
+                  placeholder="email"
                   className="rounded-md outline-none border p-2"
+                  required
                 />
               </section>
-            ) : null}
-            <section className="flex space-x-3 items-center">
-              <MdEmail />
-              <input
-                type="email"
-                value={email}
-                name="email"
-                onChange={handleLogin}
-                placeholder="email"
-                className="rounded-md outline-none border p-2"
-              />
-            </section>
-            <section className="flex space-x-3 items-center">
-              <RiLockPasswordFill />
-              <input
-                type="password"
-                value={password}
-                name="password"
-                onChange={handleLogin}
-                placeholder="password"
-                className="rounded-md outline-none border p-2"
-              />
-            </section>
-          </div>
-          {signup ? (
-            <section className="flex items-center space-x-3 my-5">
-              <input
-                type="checkbox"
-                name="privacyPolicy"
-                checked={privacyPolicy}
-                onChange={handleLogin}
-              />
-              <h4 className="text-sidebar">I Agree to Privacy Policy</h4>
-            </section>
-          ) : (
-            <section className="flex items-center space-x-3 my-5">
-              <input
-                type="checkbox"
-                name="rememberMe"
-                checked={rememberMe}
-                onChange={handleLogin}
-              />
-              <h4 className="text-sidebar">Remember me</h4>
-            </section>
-          )}
-          <button
-            className="outline-none border rounded-full border-icons text-icons font-bold w-full p-2"
-            onClick={loginSignup}
-          >
-            {signup ? "Sign Up" : "Login"}
-          </button>
+              <section className="flex space-x-3 items-center">
+                <RiLockPasswordFill />
+                <input
+                  type="password"
+                  value={password}
+                  name="password"
+                  onChange={handleLogin}
+                  placeholder="password"
+                  className="rounded-md outline-none border p-2"
+                  required
+                />
+              </section>
+            </div>
+            {signup ? (
+              <section className="flex items-center space-x-3 my-5">
+                <input
+                  type="checkbox"
+                  name="privacyPolicy"
+                  checked={privacyPolicy}
+                  onChange={handleLogin}
+                  required
+                />
+                <h4 className="text-sidebar">I Agree to Privacy Policy</h4>
+              </section>
+            ) : (
+              <section className="flex items-center space-x-3 my-5">
+                <input
+                  type="checkbox"
+                  name="rememberMe"
+                  checked={rememberMe}
+                  onChange={handleLogin}
+                />
+                <h4 className="text-sidebar">Remember me</h4>
+              </section>
+            )}
+            <button
+              className="outline-none border rounded-full border-icons text-icons font-bold w-full p-2"
+              type="submit"
+            >
+              {signup ? "Sign Up" : "Login"}
+            </button>
+          </form>
           <div className="space-y-3">
             <h4 className="mt-5 text-sidebar">
               {signup ? "Signup with" : "Login with"}
