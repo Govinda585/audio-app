@@ -53,13 +53,27 @@ const VoiceRecording = () => {
       };
     }
   };
+
+  const inviteRecord = () => {
+    alert("invite for record working...");
+  };
   return (
     <div>
       <section className="flex space-x-5 items-center">
         <Avatar src={profile} className={classes.large}></Avatar>
-        <div>
+        <div className="w-full">
           <h1 className="text-3xl text-lightGray font-medium">User Name</h1>
-          <h4 className="text-lightGray">@username</h4>
+          <section className="flex justify-between">
+            <h4 className="text-lightGray">
+              This video will be published to @user
+            </h4>
+            <h4
+              className="text-lightGray cursor-pointer"
+              onClick={inviteRecord}
+            >
+              Invite for @record
+            </h4>
+          </section>
         </div>
       </section>
       {/* recording card */}

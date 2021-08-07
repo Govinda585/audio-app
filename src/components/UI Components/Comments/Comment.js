@@ -31,14 +31,17 @@ const Comment = (props) => {
           <div className="flex space-x-5 p-3">
             <div className="w-full">
               <div className="bg-navbar rounded-md p-2">
-                <ReactPlayer
-                  url={videos.videoUrl}
-                  light={videos.videoThumbnail}
-                  playing={true}
-                  controls={true}
-                  width="100%"
-                  height="270px"
-                />
+                <div style={{ position: "relative", paddingTop: "56.25%" }}>
+                  <ReactPlayer
+                    url={videos.videoUrl}
+                    light={videos.videoThumbnail}
+                    playing={true}
+                    controls={true}
+                    width="100%"
+                    height="100%"
+                    style={{ position: "absolute", top: "0", right: "0" }}
+                  />
+                </div>
                 <div className="space-y-7 mt-3">
                   <div className="flex space-x-7">
                     <Avatar src={team} className={classes.large}>

@@ -10,14 +10,17 @@ const Videos = (props) => {
   let { videoUrl, videoThumbnail, openCommentDialog, openShare } = props;
   return (
     <div className="bg-navbar rounded-md p-2">
-      <ReactPlayer
-        url={videoUrl}
-        light={videoThumbnail}
-        playing={true}
-        controls={true}
-        width="100%"
-        height="137px"
-      />
+      <div style={{ position: "relative", paddingTop: "56.25%" }}>
+        <ReactPlayer
+          url={videoUrl}
+          light={videoThumbnail}
+          playing={true}
+          controls={true}
+          width="100%"
+          height="100%"
+          style={{ position: "absolute", top: "0", left: "0" }}
+        />
+      </div>
       <div className="space-y-3">
         <div className="flex space-x-3">
           <Avatar src={team}>p</Avatar>

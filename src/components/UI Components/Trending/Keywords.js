@@ -9,31 +9,23 @@ const Keywords = () => {
     "history",
     "sex life",
     "travel",
-    "DIY",
-    "Sports",
-    "Bollywood",
-    "hollywood",
     "relationship",
-    "short film",
-    "student",
-    "village",
-    "action",
-    "drama",
+    "conversation",
+    "podcast",
+    "entrepreneurship",
   ];
+
   const [start, setStart] = useState(0);
   const [end, setEnd] = useState(10);
 
-  const LeftSide = () => {
-    setStart(start - end);
-    setEnd(start - end);
-  };
-  const RightSide = () => {
-    setStart(start + end);
-    setEnd(end + end);
-  };
+  const rightClick = () => {};
+  const leftClick = () => {};
+
   return (
     <div className="flex space-x-3 py-3 overflow-hidden items-center">
-      <GrFormPrevious onClick={LeftSide} className="cursor-pointer" />
+      {start !== 0 ? (
+        <GrFormPrevious className="cursor-pointer" onClick={leftClick} />
+      ) : null}
 
       {keywords.slice(start, end).map((keyword) => (
         <div key={keyword}>
@@ -42,7 +34,10 @@ const Keywords = () => {
           </button>
         </div>
       ))}
-      <GrFormNext onClick={RightSide} className="cursor-pointer" />
+
+      {keywords.length > end ? (
+        <GrFormNext className="cursor-pointer" onClick={rightClick} />
+      ) : null}
     </div>
   );
 };

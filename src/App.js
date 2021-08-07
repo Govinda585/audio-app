@@ -16,6 +16,7 @@ import { useState } from "react";
 import Share from "./components/UI Components/Comments/Share";
 import Upload from "./components/UI Components/Upload/Upload";
 import Search from "./components/UI Components/Search/Search";
+import Login from "./components/UI Components/Login/Login";
 
 function App() {
   const [openComment, setOpenComment] = useState(false);
@@ -33,65 +34,81 @@ function App() {
   const closeShare = () => {
     setOpen(false);
   };
+
+  // login
+  const [loginModel, setLoginModel] = useState(true);
+
+  const loginSuccess = () => {
+    setLoginModel(false);
+  };
+  const logoutSuccess = () => {
+    setLoginModel(true);
+  };
   return (
     <Router>
-      <div className="wrapper h-screen">
-        <Share closeShare={closeShare} open={open} />
-        <Comment
-          openComment={openComment}
-          closeCommentDialog={closeCommentDialog}
-        />
-        <div className="nav">
-          <Navbar />
-        </div>
-        <div className="sidebar">
+      <div className="relative">
+        <div className="absolute top-0 right-0 z-10 sm:w-2/4 md:w-1/4 w-full lg:hidden">
           <Sidebar />
         </div>
-        <div className="main p-5">
-          <Switch>
-            <Route exact path="/">
-              <Home
-                openCommentDialog={openCommentDialog}
-                openShare={openShare}
-              />
-            </Route>
-            <Route exact path="/profile">
-              <Profile />
-            </Route>
-            <Route exact path="/following-list">
-              <FollowingList />
-            </Route>
-            <Route exact path="/live">
-              <Live
-                openCommentDialog={openCommentDialog}
-                openShare={openShare}
-              />
-            </Route>
-            <Route exact path="/recording">
-              <VoiceRecording />
-            </Route>
-            <Route exact path="/trending">
-              <Trending
-                openCommentDialog={openCommentDialog}
-                openShare={openShare}
-              />
-            </Route>
-            <Route exact path="/cast">
-              <Cast
-                openCommentDialog={openCommentDialog}
-                openShare={openShare}
-              />
-            </Route>
-            <Route exact path="/setting">
-              <Setting />
-            </Route>
-            <Route path="/upload">
-              <Upload />
-            </Route>
-            <Route path="/search">
-              <Search />
-            </Route>
-          </Switch>
+        <div className="wrapper h-screen">
+          <Login loginModel={loginModel} loginSuccess={loginSuccess} />
+          <Share closeShare={closeShare} open={open} />
+          <Comment
+            openComment={openComment}
+            closeCommentDialog={closeCommentDialog}
+          />
+          <div className="nav">
+            <Navbar logoutSuccess={logoutSuccess} />
+          </div>
+          <div className="sidebar hidden lg:block">
+            <Sidebar />
+          </div>
+          <div className="main p-5">
+            <Switch>
+              <Route exact path="/">
+                <Home
+                  openCommentDialog={openCommentDialog}
+                  openShare={openShare}
+                />
+              </Route>
+              <Route exact path="/profile">
+                <Profile />
+              </Route>
+              <Route exact path="/following-list">
+                <FollowingList />
+              </Route>
+              <Route exact path="/live">
+                <Live
+                  openCommentDialog={openCommentDialog}
+                  openShare={openShare}
+                />
+              </Route>
+              <Route exact path="/recording">
+                <VoiceRecording />
+              </Route>
+              <Route exact path="/trending">
+                <Trending
+                  openCommentDialog={openCommentDialog}
+                  openShare={openShare}
+                />
+              </Route>
+              <Route exact path="/cast">
+                <Cast
+                  openCommentDialog={openCommentDialog}
+                  openShare={openShare}
+                />
+              </Route>
+              <Route exact path="/setting">
+                <Setting />
+              </Route>
+              <Route path="/upload">
+                <Upload />
+              </Route>
+              <Route path="/search">
+                <Search />
+              </Route>
+            </Switch>
+          </div>
         </div>
       </div>
     </Router>

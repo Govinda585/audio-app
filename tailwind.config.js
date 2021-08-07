@@ -22,6 +22,7 @@ module.exports = {
       facebook: "#4267B2",
       whatsApp: "#25d366",
       navbar: "#ffffff",
+      twitter: "#00acee",
     },
     borderColor: (theme) => ({
       DEFAULT: theme("colors.gray.300", "currentColor"),
@@ -32,7 +33,7 @@ module.exports = {
       hardGray: "#727272",
     }),
     height: {
-      "nav-height": "10vh",
+      "nav-height": "60px",
       "main-height": "90vh",
     },
   },

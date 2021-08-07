@@ -23,7 +23,7 @@ const SavedVideos = (props) => {
   return (
     <div className="flex flex-wrap">
       {videos.map((video) => (
-        <div className="w-1/4 p-1">
+        <div className="w-full sm:w-2/4 md:w-2/6 xl:w-1/4 p-1">
           <Videos
             openCommentDialog={openCommentDialog}
             videoUrl={video.videoUrl}

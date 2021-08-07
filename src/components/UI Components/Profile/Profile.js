@@ -11,6 +11,10 @@ const useStyles = makeStyles((theme) => ({
     height: theme.spacing(13),
   },
 }));
+
+const inviteUser = () => {
+  alert("invite user working...");
+};
 const Profile = () => {
   const classes = useStyles();
   const [profileVideo, setProfileVideo] = useState(true);
@@ -25,20 +29,25 @@ const Profile = () => {
             <h4 className="text-lightGray">@username</h4>
           </div>
         </section>
-        <section className="flex space-x-5 ">
-          <div className="flex space-x-2">
-            <p className="text-hardGray font-bold">0</p>
-            <h4 className="text-sidebar">Following</h4>
-          </div>
-          <div className="flex space-x-2">
-            <p className="text-hardGray font-bold">0</p>
-            <h4 className="text-sidebar">Followers</h4>
-          </div>
-          <div className="flex space-x-2">
-            <p className="text-hardGray font-bold">0</p>
-            <h4 className="text-sidebar">Likes</h4>
-          </div>
-        </section>
+        <div className="flex justify-between">
+          <section className="flex space-x-5 ">
+            <div className="flex space-x-2">
+              <p className="text-hardGray font-bold">0</p>
+              <h4 className="text-sidebar">Following</h4>
+            </div>
+            <div className="flex space-x-2">
+              <p className="text-hardGray font-bold">0</p>
+              <h4 className="text-sidebar">Followers</h4>
+            </div>
+            <div className="flex space-x-2">
+              <p className="text-hardGray font-bold">0</p>
+              <h4 className="text-sidebar">Likes</h4>
+            </div>
+          </section>
+          <h1 className="text-hardGray cursor-pointer" onClick={inviteUser}>
+            Invite for @user
+          </h1>
+        </div>
       </div>
 
       {/* videos and saved videos */}

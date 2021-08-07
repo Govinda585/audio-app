@@ -6,10 +6,27 @@
     "nav nav nav nav"
     "sidebar main main main";
   height: 100vh;
+  overflow: hidden;
 }
 
+
+@media  only screen and (max-width: 1024px) {
+  .wrapper {
+  display: grid;
+  grid-template-columns: 0.6fr 3fr;
+  grid-template-rows: 0.1fr 1fr;
+  grid-template-areas:
+    "nav nav nav nav"
+    "main main main main";
+  height: 100vh;
+  overflow: hidden;
+}
+  
+}
 .nav {
   grid-area: nav;
+  
+  
 }
 
 .sidebar {
@@ -18,6 +35,8 @@
 
 .main {
   grid-area: main;
-  overflow-y: auto;
   background: #efefef;
+  overflow-y: scroll;
+
+  
 }
