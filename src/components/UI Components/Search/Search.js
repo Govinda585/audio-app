@@ -1,7 +1,7 @@
 import React from "react";
 import TrendingVideos from "../Trending/TrendingVideos";
 
-const Search = () => {
+const Search = ({ openCommentDialog, openShare }) => {
   return (
     <div>
       <h1 className="text-hardGray text-2xl font-medium">Search</h1>
@@ -11,7 +11,10 @@ const Search = () => {
 
       <div className="mt-5">
         <h1 className="text-hardGray text-2xl font-medium">Trending Now</h1>
-        <TrendingVideos />
+        <TrendingVideos
+          openCommentDialog={openCommentDialog}
+          openShare={openShare}
+        />
       </div>
     </div>
   );

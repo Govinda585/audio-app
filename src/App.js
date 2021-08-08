@@ -52,7 +52,10 @@ function App() {
     <Router>
       <div className="relative">
         {menu ? (
-          <div className="absolute top-0 right-0 z-10 sm:w-2/4 md:w-1/4 w-full lg:hidden">
+          <div
+            className="absolute top-0 right-0 z-10 sm:w-2/4 md:w-1/4 w-full lg:hidden"
+            onClick={() => setMenu(false)}
+          >
             <Sidebar />
           </div>
         ) : null}
@@ -82,7 +85,10 @@ function App() {
                 />
               </Route>
               <Route exact path="/profile">
-                <Profile />
+                <Profile
+                  openCommentDialog={openCommentDialog}
+                  openShare={openShare}
+                />
               </Route>
               <Route exact path="/following-list">
                 <FollowingList />
@@ -115,7 +121,10 @@ function App() {
                 <Upload />
               </Route>
               <Route path="/search">
-                <Search />
+                <Search
+                  openCommentDialog={openCommentDialog}
+                  openShare={openShare}
+                />
               </Route>
             </Switch>
           </div>

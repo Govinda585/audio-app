@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
 const inviteUser = () => {
   alert("invite user working...");
 };
-const Profile = () => {
+const Profile = ({ openCommentDialog, openShare }) => {
   const classes = useStyles();
   const [profileVideo, setProfileVideo] = useState(true);
   return (
@@ -70,7 +70,19 @@ const Profile = () => {
         </h1>
       </div>
 
-      <div>{profileVideo ? <ProfileVideos /> : <SavedVideos />}</div>
+      <div>
+        {profileVideo ? (
+          <ProfileVideos
+            openCommentDialog={openCommentDialog}
+            openShare={openShare}
+          />
+        ) : (
+          <SavedVideos
+            openShare={openShare}
+            openCommentDialog={openCommentDialog}
+          />
+        )}
+      </div>
     </div>
   );
 };
