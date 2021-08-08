@@ -10,7 +10,7 @@ import SettingsOutlinedIcon from "@material-ui/icons/SettingsOutlined";
 import { NavLink } from "react-router-dom";
 const Sidebar = () => {
   return (
-    <div className=" divide-y-2 divide-sidebar-divider divide-solid px-5 bg-sidebar z-10 h-main-height">
+    <div className=" divide-y-2 divide-sidebar-divider divide-solid px-5 bg-sidebar z-10">
       <ul className="py-8 space-y-3">
         <NavLink
           className="sidebar-item"

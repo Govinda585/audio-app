@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import MicRecorder from "mic-recorder-to-mp3";
 import { useState } from "react";
-import PlayCircleOutlineOutlinedIcon from "@material-ui/icons/PlayCircleOutlineOutlined";
 import PauseCircleOutlineOutlinedIcon from "@material-ui/icons/PauseCircleOutlineOutlined";
 import AudioPlayer from "react-h5-audio-player";
 import { MdKeyboardVoice } from "react-icons/md";
